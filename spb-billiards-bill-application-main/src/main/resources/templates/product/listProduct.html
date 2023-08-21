@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/assets/image/billiard.png">
+
+    <title>Admin Dashboard</title>
+    <!--    Ten thu muc/ ten file html :: ten fragment-->
+    <!--    head-css-->
+    <th:block th:replace="layout/head :: head-1"/>
+    <!--    head-css-->
+
+</head>
+<body>
+<!-- Begin page -->
+<div id="wrapper">
+    <!--    header-->
+    <th:block th:replace="layout/header"/>
+    <!--    header-->
+
+    <!--    left-side-->
+    <th:block th:replace="layout/left"/>
+    <!--    left-side-->
+
+
+    <div class="content-page">
+        <div class="content">
+            <!--    page content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                <h1 class="text-center">List Product</h1>
+
+                <!-- end page title -->
+
+                <!--                Start row-->
+                <div class="row" id="page-content">
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <div class="d-flex justify-content-between align-self-center">
+                                    <div>
+                                        <button class="btn btn-outline-primary m-3" id="btnShowCreateModal">
+                                            <i class="fas fa-plus"></i> New Product
+                                        </button>
+                                    </div>
+                                    <div class="m-3" style="height: 30px">
+                                        <form method="get" id="formSearch">
+                                            <div class="container-search d-flex">
+                                                <div class="d-flex "
+                                                     style="border: 1px solid lightgrey; border-radius: 5px">
+                                                    <input type="search" id="keySearch" name="keySearch"
+                                                           style="border: none" width="300px" class="form-control">
+                                                    <button type="button" class="btn btn-outline-success"
+                                                            style="border: none" id="searchbtn">
+                                                        <i class="fas fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                                <div id="datatable-buttons_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-striped table-hover" id="tbProduct">
+
+                                                <thead>
+                                                <tr role="row">
+                                                    <th style="width: 50px">ID</th>
+                                                    <th class="col-2">Hình ảnh</th>
+                                                    <th class="col-2">Tên sản phẩm</th>
+                                                    <th class="col-1">Giá <i id="sortByPrice"
+                                                                             class="fas fa-sort asc"></i></th>
+                                                    <th class="col-3">Mô tả</th>
+                                                    <th class="col-1">Danh mục</th>
+                                                    <th class="col-1" style="width: 80px;">Action</th>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row " id="pageable">
+
+                        </div>
+                    </div>
+                </div>
+                <!--                End row-->
+
+            </div>
+            <!--    page content-->
+        </div>
+    </div>
+
+    <!--    footer-->
+    <th:block th:replace="layout/footer"/>
+    <!--    footer-->
+
+    <!--    footer-javaScript-->
+    <th:block th:replace="layout/footer-js"/>
+    <!--    footer-javaScript-->
+</div>
+
+<th:block th:replace="product/modalCreateProduct"/>
+<th:block th:replace="product/modalUpdateProduct"/>
+
+
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<script src="/assets/sweetalert2/v11.7.12/sweetalert2.all.min.js"></script>
+<script src="/assets/js/jquery.validate.min.js"></script>
+<script src="/assets/js/jquery.number.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+
+</script>
+<script src="/assets/js/product.js"></script>
+<script src="/assets/js/product-validation.js"></script>
+</body>
+</html>
